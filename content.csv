@@ -1,0 +1,40 @@
+
+Môn học này là gì?; Đây là môn LẬP TRÌNH MẠNG.
+Giảng viên?; Giảng viên là ThS. VŨ QUỐC HƯNG (Email:hungvq@vaa.edu.vn).
+Nội dung môn học thế nào?; Môn học gồm 6 chương nha.<br>-<b>Chương 1.</b> Tổng quan lập trình mạng.<br>-Chương 2. Lập trình Socket – TCP Client-Server.<br>-Chương 3. Lập trình Socket – UDP Client-Server.<br>-Chương 4. Mô hình lập trình bất đồng bộ.<br>-Chương 5. Mô hình Multi-Client Server – Broadcast và Multicast – Mạng ngang hàng.<br>-Chương 6. Một số Protocol thông dụng – Xây dựng ứng dụng với dịch vụ HTTP và Email
+
+Hình thức thi thế nào?; Làm Tiểu Luận (Đánh giá làm việc nhóm) nha.
+
+Nhóm gồm mấy người;  Min là 2 và Max là 4 nha 
+
+Điều kiện qua môn là gì?; <br> 1. Điểm giữa kỳ >= 1.0 và đi học chuyên cần (KHÔNG NGHỈ quá 20% số buổi học). <br> 2. Điểm cuối kỳ/Điểm thi: Hoàn thành Tiểu luận (Đánh giá làm việc nhóm)
+
+Điểm số tính thế nào; Có 2 phần chính nha <br>- Phần 1: Điểm quá trình (chiếm 50%) <br>- Phần 2: Điểm thi (chiếm 50%).<br>- Ngoài ra còn có các điểm CỘNG cho các SV tham gia các yêu cầu của Giảng viên
+
+Hi; Xin chào bạn. Bạn muốn biết gì về môn An toàn và Bảo mật Thông tin.
+
+Hello; Xin chào bạn. Bạn muốn biết gì về môn An toàn và Bảo mật Thông tin.
+
+Điểm CỘNG (TÙY CHỌN) gồm những gì?; Tham gia các dự án nghiên cứu thêm (Xem các đề tải gợi ý).<br>- Học và thi các chứng chỉ quốc tế liên quan (Chỉ tính đến 24h59 ngày học cuối cùng).<br>- Trình bày các Project/Bài tập bằng Tiếng Anh.<br>- Làm QC cho các bài tập nhóm.
+
+Nội dung chính của môn học là gì?; LẬP TRÌNH + KIẾN THỨC MẠNG ==> 1 ỨNG DỤNG LÀM VIỆC ĐƯỢC QUA MẠNG (LAN,WAN,VPN..)
+
+Các kiến thức mạng kỳ vọng thu được trong môn học là gì?; Hiểu rõ thêm về IP và PORT (VD: 192.168.1.1:5000 khác 203.162.7.1:3000 thế nào?..)
+
+Học môn này như thế nào cho hiệu quả?; <b>Áp dụng:</b> <br > - <b>Bất kỳ các ngôn ngữ (C#,Python,C, C++, Java... )</b> <br > và kỹ thuật lập trình đã học cùng với các kiến thức Mạng máy tính để xây dựng được 1 ứng dụng làm việc và trao đỗi thông tin qua mạng.
+
+Nên bắt đầu thế nào?; COODE , CODE và CODE nhé. <br> ==> Bắt đầu bằng các ý tưởng nhỏ cho đến lớn là cách áp dụng cho bất kỳ ai nhé.
+
+Có được dùng AI Assistant không?; SV ĐƯỢC & KHUYẾN KHÍCH DÙNG các AI Assitant tool bất kỳ (ChatGPT, Gemini, Copilot, Claude...) miễn xây dựng được ứng dụng theo đề tải đã đăng ký VÀ KHÔNG COPY PROJECT CỦA NGƯỜI KHÁC <b>(BỊ XỬ LÝ THEO QUY CHẾ THI CỦA HỌC VIỆN)</b>.
+
+Mức độ yêu cầu của môn học?; Vì là thời đại AI nên các bài tập hay Project sẽ có yêu cầu cao hơn các khóa trước, <br><b><u>ĐẶC BIỆT:</u> KHÔNG ĐƯỢC CHẠY HOÀN TOÀN TRÊN MÁY LOCAL.</b>
+
+Kiến thức lập trình thu được trong môn này la gì?; Một số kiến thức chính như: Lập trình SOCKET, Mạng Overlay, Lập trình Client-Server,...
+
+Dùng AI thế nào cho hiệu quả?;<br> 1.Phân tích và phân rã yêu cầu của Bài Tập/Project +Ngôn ngữ lập trình mình giỏi nhất. <br> 2. Chọn AI Tool phù hợp với mình <br> 3. Làm các yêu cầu nhỏ dần. <br> 4. Áp dụng các kiến thức lập trình + Ghép nối các chức năng dần.
+
+Áp dụng các môn học khác thế nào?; SV được khuyến khích áp dụng toàn bộ các môn học ĐÃ, ĐANG và SẼ học vào trong môn học này nhằm tạo sự kế thừa và tận dụng các kiến thức của mình để hoàn thiện bản thân cho sự nghiệp sau khi ra trường.
+
+Bạn là ai?; Tôi là ChatBot hỗ trợ trả lời một số câu hỏi cơ bản cho môn Lập Trình Mạng thôi. Tôi không thông minh bằng ChatGPT đâu.
+
+Làm sao xây dựng được ChatBot giống như bạn?; À, cái này thì dễ. Mình được tao ra chưa đến 1h nên chắc bạn cũng làm được. Miễn biết Code nè, biết tận dụng các AI (Free) nè và biết áp dụng các kiến thức mạng nữa là OK nha.

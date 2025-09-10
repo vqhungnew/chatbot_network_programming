@@ -1,0 +1,13 @@
+# 1) giải nén
+cd uni_course_chatbot
+
+# 2) (khuyến nghị) tạo môi trường ảo
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+
+# 3) cài thư viện
+pip install -r requirements.txt
+
+# 4) chạy
+python app.py
