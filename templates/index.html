@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🤖 Chatbot môn học LẬP TRÌNH MẠNG</title>
+  <style>
+    :root { --radius: 14px; }
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; background: #f7f7fb; color: #222; }
+    .container { max-width: 780px; margin: 36px auto; background: #fff; border-radius: var(--radius); padding: 20px; box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    h1 { margin: 0 0 8px; font-size: 22px; }
+    p.meta { margin: 0 0 16px; color: #666; font-size: 14px; }
+    #chatbox { border: 1px solid #eaeaea; border-radius: var(--radius); padding: 12px; height: 420px; overflow-y: auto; background: #fafafa; }
+    .msg { margin: 10px 0; line-height: 1.4; }
+    .msg .bubble { display: inline-block; padding: 10px 12px; border-radius: 14px; }
+    .user .bubble { background: #e9f2ff; }
+    .bot .bubble { background: #ecfff0; }
+    .row { display: flex; gap: 8px; margin-top: 12px; }
+    input[type="text"] { flex: 1; padding: 12px 14px; border: 1px solid #ddd; border-radius: 12px; font-size: 16px; }
+    button { padding: 12px 14px; border: none; border-radius: 12px; background: #3b82f6; color: #fff; font-weight: 600; cursor: pointer; }
+    button.secondary { background: #10b981; }
+    #suggestions { margin-top: 10px; }
+    #suggestions button { margin: 4px; padding: 6px 10px; border: 1px solid #ddd; border-radius: 8px; background: ##0000FF; cursor: pointer; font-size: 14px; }
+    #suggestions button:hover { background: #dbeafe; }
+    .small { font-size: 12px; color: #666; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 Chatbot môn học LẬP TRÌNH MẠNG</h1>
+    <!--p class="meta">Dữ liệu đọc từ <code>content.csv</code> hoặc <code>content.xlsx</code> (2 cột: cột 1 = nội dung/câu hỏi, cột 2 = câu trả lời). Hệ thống có so khớp gần đúng và gợi ý câu hỏi.</p-->
+    <div id="chatbox"></div>
+    <div id="suggestions"></div>
+
+    <div class="row">
+      <input id="message" type="text" placeholder="Nhập câu hỏi và nhấn Enter..." autofocus/>
+      <button id="sendBtn">Gửi</button>
+      <button class="secondary" id="reloadBtn" title="Đọc lại file dữ liệu">Tải lại</button>
+    </div>
+    <div class="small">Mẹo: sửa/ghi thêm dữ liệu trong file <code>content.csv</code> hoặc <code>content.xlsx</code>, rồi bấm “Tải lại”.</div>
+  </div>
+
+  <script>
+    const chatbox = document.getElementById('chatbox');
+    const input = document.getElementById('message');
+    const sendBtn = document.getElementById('sendBtn');
+    const reloadBtn = document.getElementById('reloadBtn');
+    const suggBox = document.getElementById('suggestions');
+
+    function append(type, text) {
+      const el = document.createElement('div');
+      el.className = 'msg ' + type;
+      //el.innerHTML = '<div class="bubble">' + text.replace(/</g,'&lt;') + '</div>';
+      el.innerHTML = '<div class="bubble">' + text.replace(/\n/g, "<br>") + '</div>';
+      chatbox.appendChild(el);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+    function sendSuggestion(txt){ input.value = txt; sendMessage(); }
+
+    async function sendMessage() {
+      const msg = input.value.trim();
+      if (!msg) return;
+      append('user','Bạn: ' + msg);
+      input.value = '';
+      sendBtn.disabled = true;
+      try {
+        const res = await fetch('/ask', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({message: msg}) });
+        const data = await res.json();
+        append('bot','Bot: ' + (data.reply || 'Có lỗi xảy ra.'));
+        // suggestions
+        suggBox.innerHTML = '';
+        if (data.suggestions && data.suggestions.length) {
+          const p = document.createElement('p'); p.textContent = '👉 Bạn có thể hỏi thêm:'; suggBox.appendChild(p);
+          data.suggestions.forEach(q => {
+            const b = document.createElement('button'); b.textContent = q; b.onclick = () => sendSuggestion(q); suggBox.appendChild(b);
+          });
+        }
+      } catch (e) {
+        append('bot','Bot: Lỗi mạng. Vui lòng thử lại.');
+      } finally {
+        sendBtn.disabled = false; input.focus();
+      }
+    }
+
+    async function reloadData(){
+      reloadBtn.disabled = true;
+      try { const res = await fetch('/reload', {method:'POST'}); const data = await res.json(); append('bot', 'Đã tải lại dữ liệu (' + (data.count??0) + ' mục).'); }
+      catch(e){ append('bot','Không tải lại được dữ liệu.'); }
+      finally { reloadBtn.disabled = false; }
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    input.addEventListener('keydown', e => { if (e.key==='Enter') sendMessage(); });
+    reloadBtn.addEventListener('click', reloadData);
+
+    // Lời chào
+    append('bot','Chào bạn 👋! Hãy hỏi mình về môn học này nhé.');
+  </script>
+</body>
+</html>
